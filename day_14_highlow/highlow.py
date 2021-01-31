@@ -5,19 +5,23 @@ from art import vs
 from replit import clear
 
 
-
 # Format the data
 def format_data(choice):
     return f"{choice['name']}, a {choice['description']}, from {choice['country']}"
+
 
 def compare(guess, a_followers, b_followers):
     if a_followers > b_followers:
         return guess == "a"
     else:
         return guess == "b"
+
+
 # Pick a random entry from the data
 def random_choice():
     return random.choice(data)
+
+
 # Keep the game running
 def game():
     # Display logo
@@ -30,16 +34,16 @@ def game():
     # Pick B
     choice_b = random.choice(data)
     while game_continue:
-    # If they win compare the answer with the next one
+        # If they win compare the answer with the next one
         choice_a = random_choice()
         choice_b = random_choice()
         while choice_a == choice_b:
             choice_b = random_choice()
-    # Print A
+        # Print A
         print(f"Compare A: {format_data(choice_a)}")
-    # Display vs
+        # Display vs
         print(vs)
-    # Print B
+        # Print B
         print(f"Against B: {format_data(choice_b)}")
         player_guess = input("Who has more followers? 'A' or 'B': ").lower()
         # Set guess to lower case
@@ -60,23 +64,6 @@ def game():
         else:
             game_continue = False
             print(f"That's not right you lose!\nFinal score: {score}")
+
+
 game()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
