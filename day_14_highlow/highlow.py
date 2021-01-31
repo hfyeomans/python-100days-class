@@ -40,7 +40,7 @@ def game():
     # Display vs
         print(vs)
     # Print B
-        print(f"Compare B: {format_data(choice_b)}")
+        print(f"Against B: {format_data(choice_b)}")
         player_guess = input("Who has more followers? 'A' or 'B': ").lower()
         # Set guess to lower case
         print(player_guess)
